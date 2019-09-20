@@ -35,6 +35,7 @@ namespace SeparateEnginesSample
         {
             try
             {
+                // [START CUSTOM_USER_DATA_DIR]
                 string userDataDir1 = Path.GetFullPath("user-data-dir-one");
                 Directory.CreateDirectory(userDataDir1);
                 IEngine engine1 = EngineFactory.Create(new EngineOptions.Builder
@@ -42,7 +43,8 @@ namespace SeparateEnginesSample
                     UserDataDirectory = userDataDir1
                 }.Build());
                 Console.WriteLine("Engine1 created");
-
+                // [END CUSTOM_USER_DATA_DIR]
+                
                 string userDataDir2 = Path.GetFullPath("user-data-dir-two");
                 Directory.CreateDirectory(userDataDir2);
                 IEngine engine2 = EngineFactory.Create(new EngineOptions.Builder
