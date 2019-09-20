@@ -35,7 +35,7 @@ namespace SeparateEnginesSample
         {
             try
             {
-                // [START CUSTOM_USER_DATA_DIR]
+                // [START separate_engines]
                 string userDataDir1 = Path.GetFullPath("user-data-dir-one");
                 Directory.CreateDirectory(userDataDir1);
                 IEngine engine1 = EngineFactory.Create(new EngineOptions.Builder
@@ -43,7 +43,6 @@ namespace SeparateEnginesSample
                     UserDataDirectory = userDataDir1
                 }.Build());
                 Console.WriteLine("Engine1 created");
-                // [END CUSTOM_USER_DATA_DIR]
                 
                 string userDataDir2 = Path.GetFullPath("user-data-dir-two");
                 Directory.CreateDirectory(userDataDir2);
@@ -62,7 +61,7 @@ namespace SeparateEnginesSample
                 Console.WriteLine("browser2 created");
 
                 // The browser1 and browser2 instances will not see the cookies and cache data files of each other.
-
+                // [END separate_engines]
                 engine2.Dispose();
                 engine1.Dispose();
             }
